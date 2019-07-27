@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import pl.scacademy.programming.examples.model.Car;
 
 import java.util.Collection;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -25,8 +26,8 @@ class CarDataProviderTest {
     }
     @Test
     void shouldReturnStreamWithKnownOfElements(){
-        Collection<Car> result = (Collection<Car>) carDataProvider.getCarsAsStream();
-        assertThat(result.size()).isEqualTo(14);
+        Stream<Car> result =  carDataProvider.getCarsAsStream();
+        assertThat(result.count()).isEqualTo(14);
     }
 
 
